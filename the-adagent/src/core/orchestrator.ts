@@ -80,7 +80,7 @@ export async function processMessage(input: PipelineInput): Promise<PipelineResu
   }
 
   // ===== 9. INTRODUCE HUMAN DELAY =====
-  const delayMs = 10000; // 10 seconds
+  const delayMs = 4000; // 4 seconds
   logger.debug({ chatId: input.chatId, delayMs }, 'Sleeping to simulate human delay...')
   await new Promise(resolve => setTimeout(resolve, delayMs));
 
