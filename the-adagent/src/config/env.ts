@@ -17,6 +17,7 @@ export const ENV = {
 
   // WaSenderAPI
   WASENDER_API_KEY:      required('WASENDER_API_KEY'),
+  WASENDER_INSTANCE_KEY: optional('WASENDER_INSTANCE_KEY', ''),
   WASENDER_API_URL:      optional('WASENDER_API_URL', 'https://www.wasenderapi.com'),
   WASENDER_WEBHOOK_SECRET: optional('WASENDER_WEBHOOK_SECRET', ''),
   TEAM_CHAT_ID:          optional('TEAM_CHAT_ID', ''),

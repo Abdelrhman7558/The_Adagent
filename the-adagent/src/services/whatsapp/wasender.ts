@@ -101,10 +101,16 @@ export const wasender = {
 // ===== Internal helpers =====
 
 async function apiCall(path: string, body: Record<string, any>): Promise<any> {
+  // Inject instance key if provided
+  const payload = {
+    ...body,
+    ...(ENV.WASENDER_INSTANCE_KEY ? { key: ENV.WASENDER_INSTANCE_KEY } : {})
+  }
+
   const response = await fetch(`${API}${path}`, {
     method: 'POST',
     headers: HEADERS,
-    body: JSON.stringify(body),
+    body: JSON.stringify(payload),
   })
 
   if (!response.ok) {
