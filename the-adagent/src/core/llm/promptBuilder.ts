@@ -1,17 +1,8 @@
-import { readFileSync } from 'fs'
-import path from 'path'
-import { fileURLToPath } from 'url'
+import { SYSTEM_PROMPT } from './prompts/responseAgent.prompt.js'
 import type { ChatState } from '../../types/memory.js'
 import type { RoutingDecision, Depth } from '../../types/routing.js'
 import type { CustomerProfile } from '../../types/memory.js'
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url))
-
-// Load once at startup
-const SYSTEM_PROMPT = readFileSync(
-  path.join(__dirname, 'prompts', 'responseAgent.prompt.md'),
-  'utf-8'
-)
 
 interface UserPromptInput {
   message: string

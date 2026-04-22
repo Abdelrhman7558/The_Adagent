@@ -101,10 +101,11 @@ export const wasender = {
 // ===== Internal helpers =====
 
 async function apiCall(path: string, body: Record<string, any>): Promise<any> {
-  // Inject instance key if provided
+  // Inject instance key if provided, or fallback to API key as 'key' 
+  // (WaSender clones often use the API Key as the Instance Key for single-device accounts)
   const payload = {
     ...body,
-    ...(ENV.WASENDER_INSTANCE_KEY ? { key: ENV.WASENDER_INSTANCE_KEY } : {})
+    key: ENV.WASENDER_INSTANCE_KEY || ENV.WASENDER_API_KEY
   }
 
   const response = await fetch(`${API}${path}`, {
