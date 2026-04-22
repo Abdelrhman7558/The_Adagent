@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "tsx watch src/index.ts",
     "start": "node dist/index.js",
-    "build": "tsc",
+    "build": "tsc && mkdir -p dist/core/llm/prompts && cp src/core/llm/prompts/*.md dist/core/llm/prompts/",
     "index": "tsx scripts/indexVault.ts"
   },
   "dependencies": {
