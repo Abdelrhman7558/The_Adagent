@@ -56,12 +56,14 @@ export const promptBuilder = {
     parts.push(`processing_depth: ${routing.depth}`)
 
     // Profile
-    if (profile.name || profile.company || profile.industry || profile.platform) {
+    if (profile.name || profile.company || profile.industry || profile.platform || profile.business_type || profile.source) {
       parts.push(`\n[ملف العميل]`)
       if (profile.name) parts.push(`الاسم: ${profile.name}`)
       if (profile.company) parts.push(`الشركة: ${profile.company}`)
       if (profile.industry) parts.push(`المجال: ${profile.industry}`)
       if (profile.platform) parts.push(`المنصة: ${profile.platform}`)
+      if (profile.business_type) parts.push(`نوع العمل: ${profile.business_type}`)
+      if (profile.source) parts.push(`المصدر: ${profile.source}`)
     }
 
     // Chat history

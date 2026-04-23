@@ -14,6 +14,8 @@ export interface CustomerProfile {
   phone?: string
   field?: string        // from lead form (e.g. "fashion", "electronics")
   platform?: string     // noon, amazon, jumia etc
+  source?: string       // e.g. "adstartup_ad"
+  business_type?: string // e.g. "website", "social_media"
 }
 
 export interface CompressedSummary {
